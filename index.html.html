@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>¿Quieres ser mi Valentín?</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #ffe6f2;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 900px;
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+      gap: 20px;
+    }
+
+    .text-section {
+      flex: 1;
+      min-width: 280px;
+      text-align: center;
+    }
+
+    .image-section {
+      flex: 1;
+      min-width: 280px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .image-section img {
+      max-width: 100%;
+      max-height: 400px;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+
+    h1 {
+      color: #ff69b4;
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .signature {
+      color: #ff69b4;
+      font-style: italic;
+      margin-bottom: 25px;
+      font-size: 1.3em;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    #yesBtn {
+      background: #ff69b4;
+      color: white;
+      transform: scale(1);
+    }
+
+    #noBtn {
+      background: #f0f0f0;
+      color: #333;
+      transform: scale(1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="text-section">
+      <h1>¿Quieres ser mi Valentín? 💘</h1>
+      <div class="signature">Con todo mi amor, tu Flaca 💖</div>
+      <div class="buttons">
+        <button id="yesBtn">Sí</button>
+        <button id="noBtn">No</button>
+      </div>
+    </div>
+    <div class="image-section">
+      <!-- ⬇️ REEMPLAZA ESTE ENLACE POR TU FOTO ⬇️ -->
+      <img src="https://i.ibb.co/8Dp0GzX/couple.jpg" alt="Nuestra foto">
+    </div>
+  </div>
+
+  <script>
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+    let yesScale = 1;
+    let noScale = 1;
+
+    yesBtn.addEventListener('click', () => {
+      alert('¡Sabía que dirías que sí! ❤️\nTe amo más que a nada en este mundo.\nFeliz San Valentín, mi vida 💌');
+    });
+
+    noBtn.addEventListener('mouseover', () => {
+      noScale = Math.max(0.2, noScale - 0.1);
+      noBtn.style.transform = `scale(${noScale})`;
+      yesScale += 0.1;
+      yesBtn.style.transform = `scale(${yesScale})`;
+    });
+  </script>
+</body>
+</html>
